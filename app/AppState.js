@@ -1,4 +1,5 @@
 import { Car } from './models/Car.js'
+import { House } from './models/House.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
@@ -9,6 +10,11 @@ class ObservableAppState extends EventEmitter {
   /**@type {import('./models/Account.js').Account | null} */
   account = null
 
+
+  /**@type {House[]}  */
+  houses = [
+
+  ]
   /** @type {Car[]} */
   cars = [
     new Car(
@@ -26,10 +32,10 @@ class ObservableAppState extends EventEmitter {
         "updatedAt": "2023-05-16T02:40:18.318Z",
         "__v": 0,
         "creator": {
-            "_id": "63f7d6202d1cf882287f12e2",
-            "name": "Charles Francis Xavier",
-            "picture": "https://www.looper.com/img/gallery/professor-xs-entire-backstory-explained/intro-1587748942.jpg",
-            "id": "63f7d6202d1cf882287f12e2"
+          "_id": "63f7d6202d1cf882287f12e2",
+          "name": "Charles Francis Xavier",
+          "picture": "https://www.looper.com/img/gallery/professor-xs-entire-backstory-explained/intro-1587748942.jpg",
+          "id": "63f7d6202d1cf882287f12e2"
         },
         "id": "6462ed1266d4560e6cfa0f39"
       }
@@ -49,10 +55,10 @@ class ObservableAppState extends EventEmitter {
         "updatedAt": "2023-05-16T02:40:18.318Z",
         "__v": 0,
         "creator": {
-            "_id": "63f7d6202d1cf882287f12e2",
-            "name": "Charles Francis Xavier",
-            "picture": "https://www.looper.com/img/gallery/professor-xs-entire-backstory-explained/intro-1587748942.jpg",
-            "id": "63f7d6202d1cf882287f12e2"
+          "_id": "63f7d6202d1cf882287f12e2",
+          "name": "Charles Francis Xavier",
+          "picture": "https://www.looper.com/img/gallery/professor-xs-entire-backstory-explained/intro-1587748942.jpg",
+          "id": "63f7d6202d1cf882287f12e2"
         },
         "id": "6462ed1266d4560e6cfa0f39"
       }

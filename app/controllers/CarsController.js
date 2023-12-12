@@ -4,22 +4,22 @@ import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
 
-function _drawCars(){
+function _drawCars() {
   const cars = AppState.cars
   let content = ''
   cars.forEach(car => content += car.CarCard)
   setHTML('cars-list', content) // 🧪 did the static cars in the appstate draw to the page?
 }
 
-function _showCreateCarForm(){
-if(AppState.user){ //🧪 if verifies there is a user logged in, for anytime you want to show the form
-  let form = document.getElementById('create-car-form')
-  form.classList.remove('d-none')
-}
+function _showCreateCarForm() {
+  if (AppState.user) { //🧪 if verifies there is a user logged in, for anytime you want to show the form
+    let form = document.getElementById('create-car-form')
+    form.classList.remove('d-none')
+  }
 }
 
-export class CarsController{
-  constructor(){
+export class CarsController {
+  constructor() {
     console.log('🚗🎮'); //🧪
     // _drawCars() only needed for the initial draw of static data in the appstate for testing
     AppState.on('cars', _drawCars)// 🧪 replaces the need for invoking draw ourselves
@@ -31,7 +31,7 @@ export class CarsController{
   }
 
 
-  async getCars(){
+  async getCars() {
     try {
       await carsService.getCars() // added try catch later, it's just the best practice when making async requests
     } catch (error) {
@@ -40,7 +40,7 @@ export class CarsController{
     }
   }
 
-  async createCar(){
+  async createCar() {
     try {
       event.preventDefault()
       console.log('📃🚗'); //🧪 create your form and test the prevent Default
@@ -55,7 +55,7 @@ export class CarsController{
     }
   }
 
-  async removeCar(carId){
+  async removeCar(carId) {
     try {
       console.log('🔥🚗', carId); // 🧪 making sure the id gets passed
       await carsService.removeCar(carId)

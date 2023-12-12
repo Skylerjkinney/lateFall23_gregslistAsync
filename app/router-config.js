@@ -1,6 +1,7 @@
 import { AccountController } from "./controllers/AccountController.js";
 import { CarsController } from "./controllers/CarsController.js";
 import { HomeController } from "./controllers/HomeController.js";
+import { HousesController } from "./controllers/HousesController.js";
 import { AuthGuard } from "./services/AuthService.js";
 import { Router } from "./utils/Router.js";
 
@@ -28,6 +29,11 @@ export const router = new Router([
     middleware: [AuthGuard],
     controllers: [AccountController],
     view: 'app/views/AccountView.html',
+  },
+  {
+    path: '#/houses',
+    controllers: [HousesController],
+    view: 'app/views/HousesView.html'
   }
 ])
 
