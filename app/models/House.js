@@ -20,20 +20,21 @@ export class House {
         return `
         <div class="col-4">
         <div class="card">
+        ${this.DeleteButton} 
         <img src="${this.imgUrl}" class="img-fluid"/>
         <h3 class="text-center mt-1 text-success me-2 fw-bold">$$${this.price}$$</h3>
         <h4>Year: ${this.year}</h4>
         <h5>Floors: ${this.levels}</h5> 
         <p class="text-end justify-content-evenly">Bathrooms: ${this.bathrooms} Bedrooms: ${this.bedrooms}</p>
         <p>listed by <i>${this.creator.name}</i></p>
-        ${this.DeleteButton} 
         </div>
         </div>
         `
     }
     get DeleteButton(){
         if(this.creatorId == AppState.account?.id){
-            return `<button class = "btn btn-danger" onclick="app.HousesController.removeHouse('${this.id}'")</button>`
+            console.log('check resolved i should give u a button')
+            return `<button class = "btn btn-danger" onclick="app.HousesController.removeHouse('${this.id}')"</button>`
         }
         else{
             return``
